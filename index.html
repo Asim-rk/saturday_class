@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="js/script.js"></script>
+
+</head>
+<body ng-controller="Controller as ctrl">
+<div>
+    <button>ADD</button>
+    <button>VIEW</button>
+</div><br />
+<div>
+    <form>
+        <label>User Name: <input type="text" name="name" ng-model="ctrl.name"/></label><br />
+        <label>Age: <input type="number" name="age" ng-model="ctrl.age"/></label><br />
+        <label>Email: <input type="email" name="email" ng-model="ctrl.email"/></label><br />
+        <button name="submit" ng-click="ctrl.submited()">SUBMIT</button>
+    </form>
+</div>
+
+<div>
+    <table>
+        <tr><th>NAME</th><th>AGE</th><th>EMAIL</th></tr>
+        <tr ng-repeat="user in ctrl.user"><td>{{user.name}}</td><td>{{user.age}}</td><td>{{user.email}}</td><td><button ng-click="">EDIT</button></td></tr>
+    </table>
+</div>
+</body>
+</html>
